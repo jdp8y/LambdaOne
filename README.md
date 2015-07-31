@@ -1,11 +1,13 @@
 # LambdaOne
-This is repository for code to run on a Arduino robot. The robot is a sumobot with four breaks, one motor, two batteries, and a DC to AC inverter. The main board is a Arduino Uno, I will list the pins that the components are connected to along with the component's function(s) and a brief summary on the connections (i.e. pin 8 to Echo) on the wiki. All of the information seen in this document is avalibile in the wiki with greater detail.
+This is repository for code to run on a Arduino robot. The robot has an undecided amount of (DC or AC) motors, four brakes, two line sensors, four ultrasonic sensors, and two servo's. All connections are clearly listed as global variables in the code.
 
-### Build Status
-This repository for LambdOne uses the standard software release cycle of (in order) Pre-alpha, Alpha, Beta, Release Candidate. Because of its release cycle when code is determined to be of a specific stage of release by the creator it can be moved into a different branch based on its stability.
+## Code Flow
+Each part of the code is seperated into functions that are called by the control() function that simply calls to the most
+appropriate direction to go in and then calls the ultrasonic() function that in turn goes to the control() function that 
+starts the loop all over.
 
 ### Copyright
-The LambdaOne sofware is protected by the ["Attribution-NonCommercial-NoDerivs 3.0"](http://tinyurl.com/LambdaOneCode). The LambdAC hardware is protected by the ["Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License"](http://tinyurl.com/nrek8ac)
+The LambdaOne sofware is protected by the ["Attribution-NonCommercial-NoDerivs 3.0"](http://tinyurl.com/LambdaOneCode). The LambdaOne hardware is protected by the ["Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License"](http://tinyurl.com/nrek8ac)
 
 ### Credits
 All credits go to Josh Perry and Collin Rodes.
