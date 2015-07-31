@@ -1,4 +1,4 @@
-# LambdOne
+# LambdaOne
 This is repository for code to run on a Arduino robot. The robot is a sumobot with four breaks, one motor, two batteries, and a DC to AC inverter. The main board is a Arduino Uno, I will list the pins that the components are connected to along with the component's function(s) and a brief summary on the connections (i.e. pin 8 to Echo) on the wiki. All of the information seen in this document is avalibile in the wiki with greater detail.
 
 ### Build Status
