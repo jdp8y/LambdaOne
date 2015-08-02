@@ -1,4 +1,4 @@
-# LambdaOne Hardware
+### LambdaOne Hardware
 Work on hardware here.
 
 ### Copyright
