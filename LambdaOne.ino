@@ -26,6 +26,8 @@ Servo pivot2;
 long LineFront = analogRead(A3);
 long LineBack = analogRead(A2);
 long duration, distance, durationleft, distanceleft, durationright, distanceright, durationback, distanceback;
+// int brake = 5;
+// or we could just use motordriver.goBackwards() with an accelorometer
 int straight = 90;
 int left = 45;
 int right = 135;
