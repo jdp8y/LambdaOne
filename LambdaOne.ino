@@ -1,9 +1,15 @@
 /*
  *  The LambdaOne Software
- *  v0.9.1 - Release Candidate
+ *  v1.0 - Release Candidate
  *  Created by Josh Perry and Collin Rodes
  *  Code licenced under the "MIT" license.
 */
+
+/*
+ *  Code has to be re-written with adjustments such as pins, turning angles, delays, colorcodes, etc.
+ *  This will not work without these being adjusted.
+*/
+
 #include "MotorDriver.h"
 #include <Servo.h>
 const int  frontTriggerPin = 13;
@@ -14,25 +20,17 @@ const int  rightTriggerPin = 11;
 const int  rightEchoPin = 10;
 const int  backTriggerPin = 7;
 const int  backEchoPin = 6;
-const int straight = 90;
-const int left = 45;
-const int right = 135;
+const int straight = 0; // placeholder
+const int left = 0; // placeholder
+const int right = 0; // placeholder
 const int backPivotPin = 2;
 const int frontPivotPin = 3;
-/*
- * Possibly add a brake?
- * const int brake = ??;
- */
-int whiteColorCode;
-int blackColorCode;
-int maxDistance;
+const int maxDistance = 0; // placeholder 
+const int whiteColorCode = 0; // placeholder
+const int blackColorCode = 0; // placeholder
 long frontLine = analogRead(A3);
 long backLine = analogRead(A2);
 long durationFront, distanceFront, durationLeft, distanceLeft, durationRight, distanceRight, durationBack, distanceBack;
-void spinSearch();
-void ultrasonicPing();
-void bestOption();
-void dontFall();
 Servo pivotFront;
 Servo pivotBack;
 
@@ -157,13 +155,10 @@ void ultrasonicPing() {
 }
 
 void loop() {
-  /*
-   * Must re-write turn around code with measurements, after test build.
-   */
-  pivotBack.write(left);
-  pivotFront.write(left);
+  pivotBack.write(left); // placeholder
+  pivotFront.write(left); // placeholder
   motordriver.goForward();
-  delay(2000);
+  delay(2000); // placeholder
   motordriver.stop();
   ultrasonicPing();
 }
