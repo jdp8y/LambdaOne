@@ -1,6 +1,6 @@
 /*
  *  The LambdaOne Software
- *  v1.0 - Release Candidate
+ *  v1.1 - Release Candidate
  *  Created by Josh Perry and Collin Rodes
  *  Code licenced under the "MIT" license.
 */
