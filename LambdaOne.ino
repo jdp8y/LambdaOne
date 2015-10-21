@@ -12,27 +12,14 @@
 
 #include "MotorDriver.h"
 #include <Servo.h>
-const int  frontTriggerPin = 13;
-const int  frontEchoPin = 12;
-const int  leftTriggerPin = 9;
-const int  leftEchoPin = 8;
-const int  rightTriggerPin = 11;
-const int  rightEchoPin = 10;
-const int  backTriggerPin = 7;
-const int  backEchoPin = 6;
-const int straight = 0; // placeholder
-const int left = 0; // placeholder
-const int right = 0; // placeholder
-const int backPivotPin = 2;
-const int frontPivotPin = 3;
+const int frontTriggerPin = 13, frontEchoPin = 12, leftTriggerPin = 9, leftEchoPin = 8, rightEchoPin = 10, rightTriggerPin = 11, backTriggerPin = 7, backEchoPin = 6;
+const int straight = 0, left = 0, right = 0; // placeholder
+const int backPivotPin = 2, frontPivotPin = 3;
 const int maxDistance = 0; // placeholder 
-const int whiteColorCode = 0; // placeholder
-const int blackColorCode = 0; // placeholder
-long frontLine = analogRead(A3);
-long backLine = analogRead(A2);
+const int whiteColorCode = 0, blackColorCode = 0; // placeholder
+long frontLine = analogRead(A3), backLine = analogRead(A2);
 long durationFront, distanceFront, durationLeft, distanceLeft, durationRight, distanceRight, durationBack, distanceBack;
-Servo pivotFront;
-Servo pivotBack;
+Servo pivotFront, pivotBack;
 
 void setup() {
   Serial.begin(9600);
