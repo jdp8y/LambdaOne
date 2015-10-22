@@ -1,0 +1,8 @@
+The idea of expanding the capibilities of a robot is facinating. To enable a robot to preform specified tasks could benefit the research and development of the LambdaOne platform along with 3d printed robotics (for our purpose).
+Keep in mind this platform is for a "Sumo-Robot" challange, but if it proves to be effective looking into implementing more sensors and increasing its overall capabilities in the event that LambdaOne becomes more than just a Sumo-Bot.
+
+This file will catagorize all Concepts and rank them on: practicallity, importance/urgency, cost and aethstetic appeal.
+When submitting a concept for a extention please submit it in this form:  [Name Of Item   Cost, Use, Reason For Adding It]
+
+Concepts:
+  Camera    $40-$90, record and analize video, could be used for facial tracking or color recognition
