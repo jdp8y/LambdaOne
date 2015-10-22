@@ -7,3 +7,6 @@ The LambdaOne sofware is protected by the ["Attribution-NonCommercial-NoDerivs 3
 ### Credits
 All credits go to Josh Perry and Collin Rodes.
 
+## Used Libraries 
+["Seeed Motor Driver Library"](http://www.seeedstudio.com/wiki/File:MotorDriver20121210.zip)
+
