@@ -1,25 +1,22 @@
 /*
- *  The LambdaOne Software
- *  v1.1 - Release Candidate
- *  Created by Josh Perry and Collin Rodes
- *  Code licenced under the "MIT" license.
+    The LambdaOne Software
+    v1.2 - Release Candidate
+    Created by Josh Perry and Collin Rodes
+    Code licenced under the "MIT" license.
 */
 
 /*
- *  Code has to be re-written with adjustments such as pins, turning angles, delays, colorcodes, etc.
- *  This will not work without these being adjusted.
+    Code has to be re-written with adjustments such as pins, turning angles, delays, colorcodes, etc.
+    This will not work without these being adjusted.
 */
 
 #include "MotorDriver.h"
 #include <Servo.h>
 const int frontTriggerPin = 13, frontEchoPin = 12, leftTriggerPin = 9, leftEchoPin = 8, rightEchoPin = 10, rightTriggerPin = 11, backTriggerPin = 7, backEchoPin = 6;
-const int straight = 0, left = 0, right = 0; // placeholder
-const int backPivotPin = 2, frontPivotPin = 3;
-const int maxDistance = 0; // placeholder 
+const int maxDistance = 0; // placeholder
 const int whiteColorCode = 0, blackColorCode = 0; // placeholder
 long frontLine = analogRead(A3), backLine = analogRead(A2);
 long durationFront, distanceFront, durationLeft, distanceLeft, durationRight, distanceRight, durationBack, distanceBack;
-Servo pivotFront, pivotBack;
 
 void setup() {
   Serial.begin(9600);
@@ -31,49 +28,39 @@ void setup() {
   pinMode(rightEchoPin, INPUT);
   pinMode(backTriggerPin, OUTPUT);
   pinMode(backEchoPin, INPUT);
-  pivotBack.attach(backPivotPin);
-  pivotFront.attach(frontPivotPin);
 }
 
 void frontFuctions() {
   while ((distanceFront < distanceLeft, distanceRight, distanceBack) and (maxDistance >= distanceFront)) {
-    pivotFront.write(straight);
-    pivotBack.write(straight);
     motordriver.goForward();
-    bestOption();
+    ultrasonicPing();
   }
 }
 
 void leftFunctions() {
   while ((distanceLeft < distanceRight, distanceBack, distanceFront) and (maxDistance >= distanceLeft)) {
-    pivotFront.write(left);
-    pivotBack.write(left);
-    motordriver.goForward();
-    bestOption();
+    motordriver.goLeft();
+    ultrasonicPing();
   }
 }
 
 void rightFunctions() {
   while ((distanceRight < distanceBack, distanceFront, distanceLeft) and (maxDistance >= distanceRight)) {
-    pivotFront.write(right);
-    pivotBack.write(right);
-    motordriver.goForward();
-    bestOption();
+    motordriver.goRight();
+    ultrasonicPing();
   }
 }
 
 void backFuctions() {
   while ((distanceBack < distanceFront, distanceLeft, distanceRight) and (maxDistance >= distanceBack)) {
     motordriver.goBackward();
+    ultrasonicPing();
   }
-  bestOption();
 }
 
 void spinningPing() {
   while ((distanceFront, distanceLeft, distanceRight, distanceBack > maxDistance) and ((frontLine, backLine) = blackColorCode)) {
-    pivotFront.write(right);
-    pivotBack.write(right);
-    motordriver.goForward();
+    motordriver.goRight();
     ultrasonicPing();
   }
   ultrasonicPing();
@@ -86,7 +73,7 @@ void dontFall() {
   while ((frontLine = whiteColorCode) and (backLine = blackColorCode)) {
     motordriver.goBackward();
   }
-  bestOption();
+  ultrasonicPing();
 }
 
 void bestOption() {
@@ -109,7 +96,7 @@ void bestOption() {
   }
 }
 
-void ultrasonicPing() {
+int ultrasonicPing() {
   digitalWrite(frontTriggerPin, LOW);
   delayMicroseconds(2);
   digitalWrite(frontTriggerPin, HIGH);
@@ -142,9 +129,7 @@ void ultrasonicPing() {
 }
 
 void loop() {
-  pivotBack.write(left); // placeholder
-  pivotFront.write(left); // placeholder
-  motordriver.goForward();
+  motordriver.goRight();
   delay(2000); // placeholder
   motordriver.stop();
   ultrasonicPing();
