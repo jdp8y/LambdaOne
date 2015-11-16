@@ -96,7 +96,7 @@ void bestOption() {
   }
 }
 
-int ultrasonicPing() {
+void ultrasonicPing() {
   digitalWrite(frontTriggerPin, LOW);
   delayMicroseconds(2);
   digitalWrite(frontTriggerPin, HIGH);
